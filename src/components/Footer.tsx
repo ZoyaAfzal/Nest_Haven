@@ -6,9 +6,19 @@ import { Input } from "@/components/ui/input";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 
 const cols = [
-  { title: "Pages", links: ["Home", "Properties", "Agents", "About", "Blog"] },
-  { title: "Resources", links: ["Buyer Guide", "Seller Guide", "Mortgage Calc", "Market Reports"] },
-  { title: "Utility", links: ["Style Guide", "Licensing", "Privacy", "Terms"] },
+  { 
+    title: "Pages", 
+    links: [
+      { name: "Home", href: "/#top" },
+      { name: "Properties", href: "/#properties" },
+      { name: "Agents", href: "/#agents" },
+      { name: "About", href: "/#about" },
+      { name: "Blog", href: "/#blog" },
+      { name: "Contact", href: "/#contact" }
+    ] 
+  },
+  { title: "Resources", links: ["Buyer Guide", "Seller Guide", "Mortgage Calc", "Market Reports"].map(l => ({ name: l, href: "#" })) },
+  { title: "Utility", links: ["Style Guide", "Licensing", "Privacy", "Terms"].map(l => ({ name: l, href: "#" })) },
 ];
 
 export function Footer() {
@@ -73,11 +83,11 @@ export function Footer() {
             >
               {c.links.map((l) => (
                 <motion.li
-                  key={l}
+                  key={l.name}
                   variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
                 >
-                  <a href="#" className="nav-link text-sm text-ivory/75 hover:text-ivory">
-                    {l}
+                  <a href={l.href} className="nav-link text-sm text-ivory/75 hover:text-ivory">
+                    {l.name}
                   </a>
                 </motion.li>
               ))}

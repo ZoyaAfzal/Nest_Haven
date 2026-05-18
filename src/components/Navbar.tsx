@@ -4,7 +4,7 @@ import { Home, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 
-const links = ["Home", "Properties", "Agents", "About", "Blog"];
+const links = ["Home", "Properties", "Agents", "About", "Blog", "Contact"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,12 +51,12 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="/#cta">
+          <a href="/#contact">
             <Button variant="ghost" className="text-ivory hover:bg-ivory/5 hover:text-ivory">
               Contact Us
             </Button>
           </a>
-          <a href="/#cta">
+          <a href="/#contact">
             <Button className="bg-gold text-charcoal hover:bg-gold/90">Book a Call</Button>
           </a>
         </div>
@@ -103,12 +103,12 @@ export function Navbar() {
                 variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
                 className="mt-4 flex gap-3"
               >
-                <a href="/#cta" onClick={() => setOpen(false)} className="flex-1">
+                <a href="/#contact" onClick={() => setOpen(false)} className="flex-1">
                   <Button variant="ghost" className="w-full border border-border text-ivory">
                     Contact
                   </Button>
                 </a>
-                <a href="/#cta" onClick={() => setOpen(false)} className="flex-1">
+                <a href="/#contact" onClick={() => setOpen(false)} className="flex-1">
                   <Button className="w-full bg-gold text-charcoal">Book a Call</Button>
                 </a>
               </motion.li>
